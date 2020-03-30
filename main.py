@@ -21,7 +21,10 @@ while i < len(splitted):
 wordcount = {}
 for a in splitted:
 	wordcount[a] = splitted.count(a)
-del wordcount[""]
+try:
+	del wordcount['']
+except:
+	pass
 for key,value in sorted(wordcount.items()):
 	print(f'{key}: {value}')
 	
